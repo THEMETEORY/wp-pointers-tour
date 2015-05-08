@@ -1,4 +1,4 @@
-<?php namespace GM;
+<?php
 
 interface PointersManagerInterface {
 

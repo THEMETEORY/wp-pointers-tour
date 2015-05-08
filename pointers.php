@@ -1,100 +1,42 @@
 <?php
 $pointers = array();
- 
+
 // index.php pointers
- 
-$pointers['pointer1'] = array(
-	'title'     => sprintf( '<h3>%s</h3>', esc_html__( '1Add New Item' ) ),
-	'content'   => sprintf( '<p>%s</p>', esc_html__( 'Easily add a new post..' ) ),
-	'anchor_id' => '#wp-admin-bar-new-content',
-	'edge'      => 'top',
+
+$pointers['importer_1'] = array(
+	'title'     => sprintf( '<h3>%s</h3>', esc_html__( '1. Select Demo' ) ),
+	'content'   => sprintf( '<p>%s</p>', esc_html__( 'Please, select the demo that you like..' ) ),
+	'anchor_id' => '#os-importer-grid',
+	'edge'      => '',
 	'align'     => 'left',
-	'where'     => array( 'index.php' ) // <-- Please note this
+	'where'     => array( 'toplevel_page_os-theme-import-data' )
 );
- 
-$pointers['pointer2'] = array(
-	'title'     => sprintf( '<h3>%s</h3>', esc_html__( '2Another info' ) ),
-	'content'   => sprintf( '<p>%s</p>', esc_html__( 'Lore ipsum....' ) ),
-	'anchor_id' => '#dashboard_primary',
-	'edge'      => 'top',
-	'align'     => 'right',
-	'where'     => array( 'index.php' ) // <-- Please note this
-);
- 
-$pointers['pointer3'] = array(
-	'title'     => sprintf( '<h3>%s</h3>', esc_html__( '3Another info' ) ),
-	'content'   => sprintf( '<p>%s</p>', esc_html__( 'Lore ipsum....' ) ),
-	'anchor_id' => '#wp-admin-bar-new-content',
-	'edge'      => 'top',
-	'align'     => 'right',
-	'where'     => array( 'index.php' ) // <-- Please note this
-);
- 
-$pointers['pointer4'] = array(
-	'title'     => sprintf( '<h3>%s</h3>', esc_html__( '4Another info' ) ),
-	'content'   => sprintf( '<p>%s</p>', esc_html__( 'Lore ipsum....' ) ),
-	'anchor_id' => '#dashboard_primary',
-	'edge'      => 'top',
-	'align'     => 'right',
-	'where'     => array( 'index.php' ) // <-- Please note this
-);
- 
-$pointers['pointer5'] = array(
-	'title'     => sprintf( '<h3>%s</h3>', esc_html__( '5Another info' ) ),
-	'content'   => sprintf( '<p>%s</p>', esc_html__( 'Lore ipsum....' ) ),
-	'anchor_id' => '#comment-55',
-	'edge'      => 'top',
-	'align'     => 'right',
-	'where'     => array( 'index.php' ) // <-- Please note this
-);
- 
- 
- 
-// post-new.php pointers
- 
-$pointers['art_pointer1'] = array(
-	'title'     => sprintf( '<h3>%s</h3>', esc_html__( '1Add New Item' ) ),
-	'content'   => sprintf( '<p>%s</p>', esc_html__( 'Easily add a new post..' ) ),
-	'anchor_id' => '#title',
-	'edge'      => 'top',
+
+$pointers['importer_2'] = array(
+	'title'     => sprintf( '<h3>%s</h3>', esc_html__( '2. Configure, what to import' ) ),
+	'content'   => sprintf( '<p>%s</p>', esc_html__( 'Then, choose what Data you want to Import on your site..' ) ),
+	'anchor_id' => '#os_importer_cfg_demo_1',
+	'edge'      => 'left',
 	'align'     => 'left',
-	'where'     => array( 'post-new.php', 'post.php' ) // <-- Please note this
+	'where'     => array( 'toplevel_page_os-theme-import-data' )
 );
- 
-$pointers['art_pointer2'] = array(
-	'title'     => sprintf( '<h3>%s</h3>', esc_html__( '2Another info' ) ),
-	'content'   => sprintf( '<p>%s</p>', esc_html__( 'Lore ipsum....' ) ),
-	'anchor_id' => '#set-post-thumbnail',
+
+$pointers['importer_3'] = array(
+	'title'     => sprintf( '<h3>%s</h3>', esc_html__( '3. Start Import' ) ),
+	'content'   => sprintf( '<p>%s</p>', esc_html__( 'Start Import process and be patient. Import process can take a couple of minutes.' ) ),
+	'anchor_id' => '#os_importer_actions_demo_1',
+	'edge'      => 'left',
+	'align'     => 'left',
+	'where'     => array( 'toplevel_page_os-theme-import-data' )
+);
+
+$pointers['importer_4'] = array(
+	'title'     => sprintf( '<h3>%s</h3>', esc_html__( 'Additional information' ) ),
+	'content'   => sprintf( '<p>%s</p>', esc_html__( 'More info about Import Demo in One Click can be found in Help tab..' ) ),
+	'anchor_id' => '#contextual-help-link-wrap',
 	'edge'      => 'top',
 	'align'     => 'right',
-	'where'     => array( 'post-new.php', 'post.php' ) // <-- Please note this
+	'where'     => array( 'toplevel_page_os-theme-import-data' )
 );
- 
-$pointers['art_pointer3'] = array(
-	'title'     => sprintf( '<h3>%s</h3>', esc_html__( '3Another info' ) ),
-	'content'   => sprintf( '<p>%s</p>', esc_html__( 'Lore ipsum....' ) ),
-	'anchor_id' => '#assistant_editor_box',
-	'edge'      => 'top',
-	'align'     => 'right',
-	'where'     => array( 'post-new.php', 'post.php' ) // <-- Please note this
-);
- 
-$pointers['art_pointer4'] = array(
-	'title'     => sprintf( '<h3>%s</h3>', esc_html__( '4Another info' ) ),
-	'content'   => sprintf( '<p>%s</p>', esc_html__( 'Lore ipsum....' ) ),
-	'anchor_id' => '#postcustom',
-	'edge'      => 'top',
-	'align'     => 'right',
-	'where'     => array( 'post-new.php', 'post.php' ) // <-- Please note this
-);
- 
-$pointers['art_pointer5'] = array(
-	'title'     => sprintf( '<h3>%s</h3>', esc_html__( '5Another info' ) ),
-	'content'   => sprintf( '<p>%s</p>', esc_html__( 'Lore ipsum....' ) ),
-	'anchor_id' => '#post-preview',
-	'edge'      => 'top',
-	'align'     => 'right',
-	'where'     => array( 'post-new.php', 'post.php' ) // <-- Please note this
-);
- 
+
 return $pointers;
