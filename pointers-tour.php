@@ -1,4 +1,4 @@
-<?php namespace GM;
+<?php
 /**
  * Plugin Name: Pointers Tour (WPSE 162794)
  * Description: A plugin to create an help tour using WP pointer jQuery plugin
@@ -9,7 +9,7 @@
  * Version: 1.0.0
  *
  */
- 
+
 /*
 Copyright (C) 2014 Giuseppe Mazzapica
 
@@ -28,24 +28,30 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-require_once plugin_dir_path( __FILE__ ) . 'PointersManagerInterface.php';
-require_once plugin_dir_path( __FILE__ ) . 'PointersManager.php';
+$path = ltrim( end( @explode( get_template(), str_replace( '\\', '/', dirname( __FILE__ ) ) ) ), '/' );
+define( 'WPPT_DIR', trailingslashit( trailingslashit( get_template_directory() ) . $path ) );
+define( 'WPPT_URL', trailingslashit( trailingslashit( get_template_directory_uri() ) . $path ) );
+
+require_once WPPT_DIR . 'PointersManagerInterface.php';
+require_once WPPT_DIR . 'PointersManager.php';
 
 add_action( 'admin_enqueue_scripts', function( $page ) {
-  $file = plugin_dir_path( __FILE__ ) . 'pointers.php';
+  $file = WPPT_DIR . 'pointers.php';
   // Arguments: pointers php file, version (dots will be replaced), prefix
   $manager = new PointersManager( $file, '5.0', 'custom_admin_pointers' );
   $manager->parse();
   $pointers = $manager->filter( $page );
+
   if ( empty( $pointers ) ) { // nothing to do if no pointers pass the filter
     return;
   }
   wp_enqueue_style( 'wp-pointer' );
-  $js_url = plugins_url( 'pointers.js', __FILE__ );
+
+  $js_url = WPPT_URL . 'pointers.js';
   wp_enqueue_script( 'custom_admin_pointers', $js_url, array('wp-pointer'), NULL, TRUE );
   // data to pass to javascript
   $data = array(
-    'next_label'  => __( 'Next' ),
+    'next_label'  => __( 'Next Tip' ),
     'close_label' => __('Close'),
     'pointers'    => $pointers
   );
