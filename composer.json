@@ -1,5 +1,23 @@
 {
     "name": "themeteory/wp-pointers-tour",
-    "description": "Wordpress Pointer Tour",
-    "license": "GNU"
+    "homepage": "http://themeteory.com",
+    "description": "PHP library that allows you to easily create Admin Tour with WordPress Pointers.",
+    "keywords": ["wordpress", "plugins", "theme", "library", "pointers", "wp-pointer", "wp-admin" ],
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Vladislav Burlak",
+            "homepage": "http://themeteory.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.2"
+    },
+    "support": {
+        "issues": "https://github.com/THEMETEORY/wp-pointers-tour/issues",
+        "source": "https://github.com/THEMETEORY/wp-pointers-tour"
+    },
+    "autoload": {
+        "files": ["pointers-tour.php"]
+    }
 }
