@@ -1,7 +1,8 @@
 # THEMETEORY/wp-pointers-tour
 
 **Developers:**
-[Vladislav Burlak](https://github.com/vburlak) ([@vburlak](https://twitter.com/vburlak)) 
+[Vladislav Burlak](https://github.com/vburlak) ([@vburlak](https://twitter.com/vburlak)).
+
 **Version:** 0.0.1
 
 ## Description
