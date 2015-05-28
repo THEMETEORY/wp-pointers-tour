@@ -75,14 +75,16 @@
   };
   
   // scroll the page to current pointer then open it
-  MAP.openPointer = function() {		  
-    var $pointer = MAP.current_pointer.pointer;
-    if ( ! typeof $pointer === 'object' ) {
+  MAP.openPointer = function() {
+    var $pointer = MAP.current_pointer.pointer,
+        $pointerScrollable = MAP.current_pointer.data.scrollable;
+    if ( typeof $pointer !== 'object' ) {
       return;
     }
-    $('html, body').animate({ // scroll page to pointer
-      scrollTop: $pointer.offset().top - 30
-    }, 300, function() { // when scroll complete
+
+    // scroll page to pointer if it scrollable
+    var $pointerAnimateParam = ( $pointerScrollable === true ? { scrollTop: $pointer.offset().top - 30 } : '' );
+    $('html, body').animate( $pointerAnimateParam , 300, function() { // when scroll complete
       MAP.last_pointer = $pointer;
         var $widget = $pointer.pointer('widget');
         MAP.setNext( $widget, MAP.current_pointer.data );
